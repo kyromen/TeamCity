@@ -1,27 +1,23 @@
-TeamCity
-========
+---
+layout: default
+---
 
-<style>
-td {
-  color: black;
-  background-color: red;
-}
+<div class="home">
 
-td:hover {
-  color: white;
-  background-color: yellow;
-}
+  <h1 class="page-heading">Posts</h1>
 
-td:first-child:hover, td:last-child:hover {
-  color: white;
-  background-color: green;
-}
-</style>
+  <ul class="post-list">
+    {% for post in site.posts %}
+      <li>
+        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
 
-<table>
-  <tr>
-    <td>здесь могла быть Ваша реклама</td>
-    <td>здесь могла быть Ваша реклама</td>
-    <td>здесь могла быть Ваша реклама</td>
-  </tr>
-</table>
+        <h2>
+          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title | escape }}</a>
+        </h2>
+      </li>
+    {% endfor %}
+  </ul>
+
+  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
+
+</div>
