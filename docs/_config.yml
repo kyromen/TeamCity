@@ -3,6 +3,9 @@ output: web
 site_title: Test
 company_name: Test
 
+gems:
+  - jekyll-redirect-from
+
 exclude:
   - .idea/
   - .gitignore
